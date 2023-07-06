@@ -2,7 +2,7 @@ import React from 'react';
 
 function FurnitureProduct() {
   return (
-    <div>EMİN</div>
+    <div>EMİN değişiklik yaptı</div>
   );
 }
 
