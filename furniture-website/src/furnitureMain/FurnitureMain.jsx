@@ -2,7 +2,7 @@ import React from 'react';
 import "./FurnitureMain.css";
 function FurnitureMain() {
   return (
-    <div>AYŞE</div>
+    <div>AYŞE Klonladı</div>
   );
 }
 
