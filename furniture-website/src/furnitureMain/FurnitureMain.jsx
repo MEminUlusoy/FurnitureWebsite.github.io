@@ -5,6 +5,7 @@ function FurnitureMain() {
   return (
     <div>
       <Navbar/>
+      <div className="class"></div>
       AYŞE Klonladı.</div>
   );
 }
