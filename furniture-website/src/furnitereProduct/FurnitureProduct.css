@@ -19,17 +19,18 @@
 }
 
 .product-container{
-    height: 1500px;
+    height: 100%;
     width: 100%;
-    border: red solid 1px;
+    
     display: flex;
     justify-content: center;
+    
 }
 
 .product-inner-container{
     height: 100%;
     width: 75%;
-    border: green solid 1px;
+   
     display: flex;
 }
 
@@ -145,8 +146,10 @@
 /* ------------- product-hidden-card-container ------------- */
 
 .product-left-hidden-card-container{
+    margin-top: 50px;
     height: 10%;
     width: 100%;
+    
 }
 
 .product-left-hidden-card-item1{
@@ -157,6 +160,8 @@
     align-items: center;
     cursor: pointer;
     border-bottom: rgb(201, 201, 201) solid 1px;
+    margin-bottom: 15px;
+    padding-bottom: 15px;
     
 }
 
@@ -166,6 +171,7 @@
     margin-left: 10px;
     color: black;
     font-family: 'Manrope', sans-serif;
+    user-select: none;
     
 }
 
@@ -177,9 +183,44 @@
 }
 
 .hidden-card-item1 {
-    padding: 20px;
+    padding: 5px;
     
 }
+
+.hidden-card-item1 table{
+    width: 100%;
+    font-size: 15px;
+    
+}
+
+.hidden-card-item1 td{
+    text-align: start;
+    font-weight:lighter;
+    padding-top: 15px;
+    text-align: start;   
+
+}
+
+.hidden-card-item1 .firstTd{
+    padding-right: 400px;
+    font-weight: bold;
+    
+    
+}
+
+.hidden-card-item1 p{
+    font-weight: bold;
+    margin-top: 35px;
+    font-size: 15px;
+    margin-bottom: 35px;
+    text-align: start; 
+    
+
+}
+
+
+
+
 
 .transiton-hidden{
     transition: all 2s ease;
@@ -194,6 +235,8 @@
     align-items: center;
     cursor: pointer;
     border-bottom: rgb(201, 201, 201) solid 1px;
+    margin-bottom: 15px;
+    padding-bottom: 15px;
 }
 
 .product-left-hidden-card-item2 h1{
@@ -202,6 +245,7 @@
     margin-left: 10px;
     color: black;
     font-family: 'Manrope', sans-serif;
+    user-select: none;
     
 }
 
@@ -212,6 +256,39 @@
     
 }
 
+
+
+.hidden-card-item2 {
+    padding: 5px;
+    padding-bottom: 35px ;
+    
+}
+
+.hidden-card-item2 table{
+    width: 100%;
+    font-size: 15px;
+    
+}
+
+.hidden-card-item2 td{
+    text-align: start;
+    font-weight:lighter;
+    padding-top: 15px;
+    text-align: start;   
+
+}
+
+.hidden-card-item2 .firstTd{
+    padding-right: 400px;
+    font-weight: bold;
+    
+    
+}
+
+
+
+
+
 .product-left-hidden-card-item3{
     height: 33.333333333333333333333%;
     width: 100%;
@@ -220,6 +297,7 @@
     align-items: center;
     cursor: pointer;
     border-bottom: rgb(201, 201, 201) solid 1px;
+    padding-bottom: 10px;
 }
 
 .product-left-hidden-card-item3 h1{
@@ -228,6 +306,7 @@
     margin-left: 10px;
     color: black;
     font-family: 'Manrope', sans-serif;
+    user-select: none;
     
 }
 
@@ -239,10 +318,26 @@
 }
 
 
+.hidden-card-item3 {
+    padding-left: 5px;
+    padding-right: 5px;
+    padding-top: 20px;
+    padding-bottom: 35px;
+    
+}
+
+
+.product-left-hidden-card-item3 p{
+    font-weight: bold;
+    font-size: 15px;
+    text-align: start; 
+}
+
+
 /* ------------- product-inner-right-container ------------- */
 
 .product-inner-right-container{
-    height: 100%;
+    height: 1500px;
     width: 30%;
     
 
