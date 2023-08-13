@@ -4,16 +4,10 @@ import "./FurnitureProduct.js"
 import { useState } from 'react';
 function FurnitureProduct() {
 
-  const [show, setShow] = useState(true);
-
-  const handleClick = (event) => {
-      if(event.currentTarget.classList.contains("product-left-hidden-card-item1")){
-        
-        setShow(!show);
-
-      }
-  }
-
+  const [show1, setShow1] = useState(false);
+  const [show2, setShow2] = useState(false);
+  const [show3, setShow3] = useState(false);
+  
 
   return (
     <div>
@@ -66,30 +60,101 @@ function FurnitureProduct() {
             </div>
             <div className="product-left-hidden-card-container">
 
-              <div onClick={handleClick} className="product-left-hidden-card-item1">
+              <div onClick={() => setShow1(!show1)} className="product-left-hidden-card-item1">
                 <h1>Malzeme Bilgisi</h1>
-                <i  className="fa-solid fa-chevron-right"></i>
+                <hr/>
+                {show1 ? <i  style={{transform:"rotate(90deg)"}} className="fa-solid fa-chevron-right"></i> : <i  className="fa-solid fa-chevron-right"></i> }
               </div>
            
               {
-                show && <div className="hidden-card-item1"><p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Qui autem odio enim doloribus officia eum culpa alias dolore adipisci ea. Molestias beatae aliquid repellendus asperiores quasi sapiente reprehenderit adipisci dolore ducimus, odio animi? Nesciunt ea facilis voluptates iste reiciendis quod quisquam totam nihil. Minima beatae tempora nobis ullam eligendi saepe ea ducimus animi illo debitis ratione quas modi neque iure qui molestiae dolor dignissimos, aspernatur voluptatibus dolore voluptatem perspiciatis hic sed. Praesentium aut magni, sunt voluptas eligendi molestias repudiandae officia voluptate asperiores possimus, incidunt officiis optio, consequuntur facilis repellat cum. Consequatur rerum voluptas, nulla praesentium tempore iure dolorem ad harum?</p></div> 
+                show1 && 
+                <div className="hidden-card-item1">
+          
+                  <table>
+                    <tr>
+                      <td className='firstTd'>Kumaş</td>
+                      <td>Kadife dokulu, 100% polyester kumaş. Ekrandaki renkler değişiklik gösterebilir, kararını sağlıklı verebilmen için numune istemeni öneririz.</td>
+                    </tr>
+                    <tr>
+                      <td className='firstTd'>Dayanıklılık</td>
+                      <td>35,000 Martindale</td>
+                    </tr>
+                    <tr>
+                      <td className='firstTd'>Gramaj</td>
+                      <td>585 gr/m</td>
+                    </tr>
+                    <tr>
+                      <td className='firstTd'>Boncuklanma</td>
+                      <td>4 (5 üzerinden)</td>
+                    </tr>
+                    <tr>
+                      <td className='firstTd'>Işık Haslığı</td>
+                      <td>4 (5 üzerinden)</td>
+                    </tr>
+                    <tr>
+                      <td className='firstTd'>Oturum Minderi</td>
+                      <td>300 gr elyaf içinde 35 DNS premium HR (yüksek elastikiyetli) sünger kullanılmıştır.</td>
+                    </tr>
+                    <tr>
+                      <td className='firstTd'>Oturum Hissiyatı</td>
+                      <td>300 gr'lık elyaf yumuşak bir oturum konforu sağlarken 35 DNS HR sünger de bu konforun yıllarca kusursuz kalmasını sağlar. Oturum minderleri çelik S yay sistemi üzerine oturur ve böylece oturum konforu standardize edilir. Konforunun yıllar boyunca süreceğinden emin olabilirsin!</td>
+                    </tr>
+                    <tr>
+                      <td className='firstTd'>Sırt Minderi</td>
+                      <td>%100 boncuk silikon ile dayanıklı bir yumuşaklık hissi sağlanır.</td>
+                    </tr>      
+                    <tr>
+                      <td className='firstTd'>İskelet</td>
+                      <td>Tüm iskelet masif kayın kontra malzemeden oluşur. Bağlantı yerlerinde çelik bağlantı malzemeleri kullanılmıştır. Oturum minderleri çelik S yay sistemi üzerine oturur.</td>
+                    </tr>
+                    <tr>
+                      <td className='firstTd'>Ayaklar</td>
+                      <td>Masif kayın ağacı</td>
+                    </tr>
+                  </table>
+                  <p>Not: Ürünlerimiz konfor odaklı tasarlanmaktadır. Oldukça zengin elyaf ve elastikiyeti yüksek premium süngerler kullanıldığı için dikişler sert ve düz çizgiler şeklinde olmayabilir.</p>
+                  
+            
+                </div> 
+                
               }  
              
                  
-         
-
-             
-              <div className="product-left-hidden-card-item2">
+              <div onClick={() => setShow2(!show2)} className="product-left-hidden-card-item2">
                 <h1>Temizlik ve Bakım</h1>
-                <i className="fa-solid fa-chevron-right"></i>
+                {show2 ? <i  style={{transform:"rotate(90deg)"}} className="fa-solid fa-chevron-right"></i> : <i  className="fa-solid fa-chevron-right"></i> }
               </div>
+              
+              {
+                show2 && 
+                <div className="hidden-card-item2">
+                  <table>
+                    <tr>
+                      <td className='firstTd'>Kumaş</td>
+                      <td>Nemli bezle temizleyebilirsin. Oturum ve sırt minderlerinin kılıflarını çıkarıp elde temizleyebilirsin. Kumaşlar hafif nemliyken ütüleyebilirsin. Ayda bir (evcil hayvan sahipleri için haftada bir) fırçasız başlıklı süpürge ile süpürüp tozunu almanı tavsiye ederiz, böylece kumaş atkılarının arasına toz-kir yerleşmesini ve kokmasını engellemiş olursun.</td>
+                    </tr>
+                    <tr>
+                      <td className='firstTd'>Oturum ve Sırt Minderi</td>
+                      <td>Sık sık minderleri elinle patpalayıp formunu düzeltebilirsin. 2-3-4'lü koltuklarda ayda bir oturum minderleri ve sırt minderlerini kendi aralarında yer değiştirirsen oturum sıklığı tüm minderlere eşit dağılmış olur.</td>
+                    </tr>
+                  </table>
+                </div> 
+              } 
 
-
-              <div className="product-left-hidden-card-item3">
+              <div  onClick={() => setShow3(!show3)} className="product-left-hidden-card-item3">
                 <h1>Aletsiz Kurulum</h1>
-                <i className="fa-solid fa-chevron-right"></i>
+                {show3 ? <i  style={{transform:"rotate(90deg)"}} className="fa-solid fa-chevron-right"></i> : <i  className="fa-solid fa-chevron-right"></i> }
               </div>
-            </div>
+
+              {
+                show3 && 
+                <div className="hidden-card-item3">
+                  <p>Normod koltuklarını 15 dakikada kurabilirsin. Tüm modüllerimiz kurulum kılavuzu ile birlikte teslim ediliyor. Tavsiyemiz kurulumu 2 kişi yapmanız, böylece kaldırma-indirme gibi işlemleri kolayca yapabilirsiniz. Kurulumla ilgili detaylı bilgilere buradan ulaşabilirsin.</p>          
+                </div> 
+              } 
+
+
+            </div>   
           </div> 
 
           <div className="product-inner-right-container">
