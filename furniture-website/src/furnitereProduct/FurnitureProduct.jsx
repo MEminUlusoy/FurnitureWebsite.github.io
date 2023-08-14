@@ -2,12 +2,24 @@ import React from 'react';
 import "./FurnitureProduct.css";
 import "./FurnitureProduct.js"
 import { useState } from 'react';
+import { data } from './data';
+
 function FurnitureProduct() {
 
   const [show1, setShow1] = useState(false);
   const [show2, setShow2] = useState(false);
   const [show3, setShow3] = useState(false);
   
+  const slideLeft = () => {
+    var slider = document.getElementById('slider');
+    slider.scrollLeft = slider.scrollLeft - 500;
+  };
+
+  const slideRight = () => {
+    var slider = document.getElementById('slider');
+    slider.scrollLeft = slider.scrollLeft + 500;
+  };
+
 
   return (
     <div>
@@ -257,10 +269,56 @@ function FurnitureProduct() {
           </div> 
         </div>  
       </div>
+      <div className="slider-title">
+        <p>Bunlar da İlgini Çekebilir</p>
+      </div>
+      <div className="slider-outter-container">
+        <div className="slider-container">
+
+          <i onClick={slideLeft} class="fa-solid fa-chevron-left icon left"></i>
+          <div id='slider' className="slider-inner-container">
+            {data.map((item) => {
+              const {img,title,comment,cost} = item;
+              return(
+                <div className="slider-item">
+                  <div className="slider-item-image">
+                    <img src={img} alt="/" />
+                  </div>
+                  <div className="slider-item-title">
+                    <p>{title}</p>
+                  </div>
+                  <div className="slider-item-comment">
+                    <div className="item-comment-star">
+                      <i className="fa-solid fa-star"></i>
+                      <i className="fa-solid fa-star"></i>
+                      <i className="fa-solid fa-star"></i>
+                      <i className="fa-solid fa-star"></i>
+                    </div>
+                    <p>{`${comment} Yorum`}</p>
+                  </div>
+                  <div className="slider-item-cost">
+                    <p>{`${cost} TL`}</p>
+                  </div>
+                </div>
+              );
+            })}
+          </div> 
+
+            
+
+            
+            
+          
+          <i onClick={slideRight} class="fa-solid fa-chevron-right icon right"></i>
+        </div>
+      </div>
       
+      <div className="footer"></div>
+
     </div>
   );
 
 }
 
 export default FurnitureProduct;
+
