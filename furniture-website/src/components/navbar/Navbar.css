@@ -92,11 +92,15 @@
     background-color: #ffffff;
     opacity:0.8;
 }
+
+.Nav_inner_container{
+
 .Call_inner_container{
     width: 100%;
     height: 100%;
 }
 .Call_inner_container button{
+
     width: 100%;
     height: 100%;
     display: flex;
@@ -105,6 +109,8 @@
     border: none;
     background: transparent;
     cursor: pointer;
+    color: #3d4a59;
+    font-size: 15px;
 
 }
 .Call_inner_container p{
@@ -121,9 +127,13 @@
     font-weight: 200;
     font-style: normal;
 }
+
+
+.nav-inner-logo{
+
 .Nav-container{
     width: 100%;
-    min-height: 70px;
+    height: 70px;
     border-bottom: .5px solid #f2f2f2;
     display: flex;
     align-items: center;
@@ -132,6 +142,7 @@
 }
 
 .menu-space{
+
     width: 80%;
     height: 70px;
     position: relative;
@@ -154,65 +165,50 @@
   justify-content: flex-start;
 }
 .nav-inner-logo img{
-  width: 150px;
-  height: 70%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  object-fit:scale-down;
+
+    width: 60%;
+    height: 70%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    object-fit:scale-down;
+}
+.nav-inner-logo a{
+    font-size: 35px;
+    font-family: 'Exo', sans-serif;
+}
+.nav-user-icons{
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+}
+.icon-container{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
 }
 .nav-inner-logo p{
   font-size: 35px;
   font-family: 'Exo', sans-serif;
 }
 
-.topnav {
-  width: 100%;
-  height: 70px;
-  overflow: hidden;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
+
+
+.nav-menu{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center; 
 }
-.topnav a {
-  display: flex;
-  align-items: center;
-  justify-content: space-around;
-  float: left;
-  display: block;
-  background-color: #fff;
-  color: #3d4a59;
-  text-align: center;
-  padding: 10px 10px;
-  text-decoration: none;
-  font-size: 17px;
-  }
-.active {
-  background-color: #fff;
-  color:black;
-}
-.topnav .icon {
-  display: none;
-}
-.nav-items{
-  width: 70%;
-}
-.dropdown {
-  float: left;
-  overflow: hidden;  
-}
-  
-.dropdown .dropbtn {
-  font-size: 17px;    
-  border: none;
-  outline: none;
-  font-family: inherit;
-  margin: 0;
-  }
+
+.Call_container{
+
   
   .dropdown-content {
     display: none;
     position: absolute;
+
     width: 100%;
     box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
 
