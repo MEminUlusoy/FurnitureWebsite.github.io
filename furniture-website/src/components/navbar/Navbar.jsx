@@ -228,9 +228,7 @@ function Navbar() {
             <a href="#" className="header-menu__link">Ücretsiz Numune</a>
             <a href="#" className="header-menu__link">İletişim</a>
             <a href="#" className="header-menu__link">İptal / İade</a>
-
             <a href="#" className="header-menu__link">Sipariş Takibi</a>
-
             <a href="#" className="header-menu__link">Blog</a>
             <a href="#" className="header-menu__link">Hızlı Teslimat</a>
             <a href="#" className="header-menu__link">En Yeniler</a>
@@ -453,10 +451,7 @@ function Navbar() {
                   </div>
                 </nav>
               </header>
-
-     
             </div>
-           
           </div>
         </div>
       </div>
@@ -464,9 +459,7 @@ function Navbar() {
         <div className="Call_inner_container">
           <button className='call'>
             <div className="inner_button">
-
               <i className="fa-solid fa-phone"></i><p> Hemen Ara 0000 000 00 00 </p>
-
             </div>
           </button>
         </div>
