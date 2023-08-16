@@ -3,12 +3,51 @@ import "./FurnitureProduct.css";
 import "./FurnitureProduct.js"
 import { useState } from 'react';
 import { data } from './data';
+import {dataTop} from './dataTop';
 
 function FurnitureProduct() {
 
   const [show1, setShow1] = useState(false);
   const [show2, setShow2] = useState(false);
   const [show3, setShow3] = useState(false);
+
+  
+  var sectionIndex = 0;
+
+  const rightSlide = () => {
+    const slider = document.querySelector('.product-left-image-slider');
+    sectionIndex = (sectionIndex < 4) ? sectionIndex + 1 : 0;
+    slider.style.transform = 'translate(' +  (sectionIndex) * -20 + '%)';
+  }
+
+  const leftSlide = () => {
+    const slider = document.querySelector('.product-left-image-slider');
+    sectionIndex = (sectionIndex > 0) ? sectionIndex - 1 : 4;
+    slider.style.transform = 'translate(' +  (sectionIndex) * -20 + '%)';
+  }
+  
+  //Ana ürünün renkleri 
+  document.querySelectorAll('.product-right-clothe-circle-container li').forEach(function(indicator){
+    indicator.addEventListener('click', function(){
+      
+      document.querySelector('.product-right-clothe-circle-container .selected').classList.remove('selected');
+      indicator.classList.add('selected');
+        
+    });
+  });
+
+  //Ana ürünün ayak renkleri
+  document.querySelectorAll('.product-right-foot-circle-container li').forEach(function(indicator){
+    indicator.addEventListener('click', function(){
+      
+      document.querySelector('.product-right-foot-circle-container .selected').classList.remove('selected');
+      indicator.classList.add('selected');
+        
+    });
+  });
+
+
+ 
   
   const slideLeft = () => {
     var slider = document.getElementById('slider');
@@ -29,7 +68,24 @@ function FurnitureProduct() {
           <div className="product-inner-left-container">
 
             <div className="product-left-image-container">
-              <img src="https://www.normod.com/cdn/shop/products/1540_rel_klor2_klem_ahsap_mese_kadife_caglayesili_sonuc-816324_900x.png?v=1678692624" alt="" />
+              <div className="product-left-image-carousel">
+                <div className="product-left-image-slider">
+                  {
+                    dataTop.map((item) => {
+                      return(
+                        <section key={item.id}>
+                          <img key={item.id} src={item.img} alt="/" />
+                        </section>
+                      );  
+                    })
+                  }
+                  
+                </div>
+                <div className="controls">
+                  <span onClick={leftSlide} className="arrow left"><i className="fa-solid fa-arrow-left-long"></i></span>
+                  <span onClick={rightSlide}  className="arrow right"><i className="fa-solid fa-arrow-right-long"></i></span>
+                </div>
+              </div>
             </div>
 
             <div className="product-left-explanation-container">
@@ -39,7 +95,7 @@ function FurnitureProduct() {
               </div>
 
               <div className="product-left-explanation-image-container">
-                <img src="https://cdn.shopify.com/s/files/1/0083/3375/4432/files/1540_rel_klor1.jpg?v=1629058096" alt="" />
+                <img src="https://cdn.shopify.com/s/files/1/0083/3375/4432/files/1540_rel_klor1.jpg?v=1629058096" alt="" /> 
               </div>
 
               <div className="product-left-explanation-features-container">
@@ -202,7 +258,7 @@ function FurnitureProduct() {
                   </div>
                   <div className="product-right-clothe-circle-container">
                     <ul>
-                      <li style={{backgroundColor: "#AACFBD"}}></li>
+                      <li className='selected' style={{backgroundColor: "#AACFBD"}}></li>
                       <li style={{backgroundColor: "#F2E6D8"}}></li>
                       <li style={{backgroundColor: "#B34640"}}></li>
                       <li style={{backgroundColor: "#C7A209"}}></li>
@@ -225,7 +281,7 @@ function FurnitureProduct() {
                   
                   <div className="product-right-foot-circle-container">
                     <ul>
-                      <li style={{backgroundColor: "#D9B68B"}}></li>
+                      <li className='selected' style={{backgroundColor: "#D9B68B"}}></li>
                       <li style={{backgroundColor: "#593A28"}}></li>
                       <li style={{backgroundColor: "#0D0D0D"}}></li>
                     </ul>
@@ -275,12 +331,12 @@ function FurnitureProduct() {
       <div className="slider-outter-container">
         <div className="slider-container">
 
-          <i onClick={slideLeft} class="fa-solid fa-chevron-left icon left"></i>
+          <i onClick={slideLeft} className="fa-solid fa-chevron-left icon left"></i>
           <div id='slider' className="slider-inner-container">
             {data.map((item) => {
-              const {img,title,comment,cost} = item;
+              const {img,title,comment,cost,id} = item;
               return(
-                <div className="slider-item">
+                <div key={id} className="slider-item">
                   <div className="slider-item-image">
                     <img src={img} alt="/" />
                   </div>
@@ -309,11 +365,13 @@ function FurnitureProduct() {
             
             
           
-          <i onClick={slideRight} class="fa-solid fa-chevron-right icon right"></i>
+          <i onClick={slideRight} className="fa-solid fa-chevron-right icon right"></i>
         </div>
       </div>
       
       <div className="footer"></div>
+
+      
 
     </div>
   );
