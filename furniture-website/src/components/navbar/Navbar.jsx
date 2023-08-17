@@ -209,7 +209,7 @@ function Navbar() {
   const [open, setOpen] = useState(false);
 
   return (
-    <div className='Navbar'>
+    <div className='Navbar z-50'>
 
       <div className='Adv_container'>
         <div className="Adv_inner_container">
@@ -273,6 +273,7 @@ function Navbar() {
                             className="relative -m-2 inline-flex items-center justify-center rounded-md p-2 text-gray-400"
                             onClick={() => setOpen(false)}
                           >
+                            <i class="fa-solid fa-xmark text-slate-700"></i>
                             <span className="absolute -inset-0.5" />
                             <span className="sr-only">Close menu</span>
 
@@ -288,8 +289,8 @@ function Navbar() {
                                   key={category.name}
                                   className={({ selected }) =>
                                     classNames(
-                                      selected ? 'border-slate-500 text-slate-600' : 'border-transparent text-gray-100',
-                                      'flex-1 whitespace-nowrap border-b-2 px-1 py-4 text-base font-medium'
+                                      selected ? 'border-slate-500 text-slate-600' : 'border-transparent text-gray-500',
+                                      'flex-1 whitespace-nowrap border-b-2 py-2 text-base font-medium'
                                     )
                                   }
                                 >
@@ -300,19 +301,18 @@ function Navbar() {
                           </div>
                           <Tab.Panels as={Fragment}>
                             {navigation.categories.map((category) => (
-                              <Tab.Panel key={category.name} className="space-y-10 px-4 pb-8 pt-10">
-                                <div className="grid grid-cols-2 gap-x-4">
+                              <Tab.Panel key={category.name} className=" px-4 pb-8 pt-2">
+                                <div className="">
                                   {category.featured.map((item) => (
                                     <div key={item.name} className="group relative text-sm">
                                       <div className="aspect-h-1 aspect-w-1 overflow-hidden rounded-lg bg-gray-100 group-hover:opacity-75">
-                                        <img src={item.imageSrc} alt={item.imageAlt} className="object-cover object-center" />
-                                      </div>
+                                        </div>
                                       <a href={item.href} className="mt-6 block font-medium text-gray-900">
                                         <span className="absolute inset-0 z-10" aria-hidden="true" />
-                                        {item.name}
+                                        {item.name} 
                                       </a>
                                       <p aria-hidden="true" className="mt-1">
-                                        Shop now
+                                        Shop now<i className="fa-solid fa-chevron-right text-gray-900 ml-5"></i>
                                       </p>
                                     </div>
                                   ))}
@@ -324,12 +324,15 @@ function Navbar() {
                           </Tab.Panels>
                         </Tab.Group>
 
-                        <div className="space-y-6 border-t border-red-100 px-4 py-6">
+                        <div className=" border-b border-slate-500 px-4 pb-6">
                           {navigation.pages.map((page) => (
                             <div key={page.name} className="flow-root">
-                              <a href={page.href} className="-m-2 block p-2 font-medium text-gray-900">
+                              <a href={page.href} className="mt-6 block font-medium text-gray-900">
                                 {page.name}
                               </a>
+                              <p aria-hidden="true" className="mt-1">
+                                Shop now<i className="fa-solid fa-chevron-right text-gray-900 ml-5"></i>
+                              </p>
                             </div>
                           ))}
                         </div>
@@ -344,9 +347,10 @@ function Navbar() {
                   <div className="flex h-16 items-center">
                     <button
                       type="button"
-                      className="relative rounded-md bg-white p-2 text-gray-400 lg:hidden"
+                      className="relative rounded-md  p-2 text-gray-400 lg:hidden"
                       onClick={() => setOpen(true)}
                     >
+                      <i className="fa-solid fa-bars text-slate-700"></i>
                       <span className="absolute -inset-0.5" />
                       <span className="sr-only">Open menu</span>
 
@@ -372,9 +376,9 @@ function Navbar() {
                                   <Popover.Button
                                     className={classNames(
                                       open
-                                        ? ' text-slate-500'
-                                        : 'border-transparent text-gray-700 hover:text-gray-400',
-                                      'relative z-10 -mb-px flex items-center pt-px text-sm font-medium duration-200 ease-out'
+                                        ? 'border-none outline-none text-slate-500'
+                                        : 'border-none outline-none text-gray-700 hover:text-gray-400',
+                                      'relative z-10 -mb-px flex items-center pt-px  duration-200 ease-out'
                                     )}
                                   >
                                     {category.name}
@@ -441,10 +445,10 @@ function Navbar() {
                     </Popover.Group>
                     <div className="ml-auto flex items-center justiy-around">
                       <div className="nav-user-icons lg:ml-8 lg:flex justify-between">
-                        <div className="icon-container ">
-                          <a href="#"><i className="fa-solid fa-bag-shopping m-5"></i></a>
-                          <a href="#"><i className="fa-solid fa-magnifying-glass m-5"></i></a>
-                          <a href="#"><i className="fa-solid fa-user m-5"></i></a>
+                        <div className="icon-container">
+                          <a href="#"><i className="fa-solid fa-bag-shopping m-5 text-gray-700"></i></a>
+                          <a href="#"><i className="fa-solid fa-magnifying-glass m-5 text-gray-700"></i></a>
+                          <a href="#"><i className="fa-solid fa-user m-5 text-gray-700"></i></a>
                         </div>
                       </div>
                     </div>
