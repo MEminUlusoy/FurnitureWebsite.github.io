@@ -1,0 +1,9 @@
+  .footer{
+    height: 530px;
+  }
+  .logo {
+    margin: 10px;
+    font-size: 35px;
+    font-family: 'Exo', sans-serif;
+    color: white;
+  }
