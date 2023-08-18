@@ -1,6 +1,33 @@
-import React from 'react';
+import React, { useState } from 'react';
 import "./FurnitureMain.css";
-function FurnitureMain() {
+
+  const slides = [
+    {
+      header: '%100 Modüler İskandinav',
+      description: 'Ekle, çıkar, değiştir!',
+      button: 'Koltukları Keşfet',
+      url: 'https://www.normod.com/cdn/shop/files/1_1__1_900x.jpg?v=1667315322',
+    },
+    {
+      header: 'Ahşap ürünlerimiz Levy Berjer ve Norac Sehpalar Yeniden Satışta!',
+      description: '',
+      button: 'Ürünleri İncele',
+      url: 'https://www.normod.com/cdn/shop/files/Adsiz_tasarim_9_f5e6afe6-42d9-4720-9fe4-a6308f4acbaf_900x.png?v=1682337802',
+    },
+    {
+      header: 'Modern ve Şık Tasarımlar',
+      description: '',
+      button: 'Koltuk Takımlarını Keşfet',
+      url: 'https://www.normod.com/cdn/shop/files/cord-sofa-set-hp_2_900x.jpg?v=1679566997',
+    },
+
+    {
+      header: 'Yaşam Alanını Halılarla Tanımla!',
+      description: '',
+      button: 'Halıları Keşfet',
+      url: 'https://www.normod.com/cdn/shop/files/Hali_anasayfa_desktop_2_1_1800x_edd42356-8a84-4692-8c65-2b24daab6dcb_900x.webp?v=1670578200',
+    },
+  ];
   const callouts = [
     {
       name: 'En Sevilen Kadife Koltuklar',
@@ -80,9 +107,15 @@ function FurnitureMain() {
       href: './category',
     },
   ];
+  
+  function FurnitureMain() {
   return (
     <div>
       <div className="class"></div>
+
+      <div className="slider">
+
+      </div>
 
       <div className="categories">
         <div className="relative overflow-hidden ">
@@ -91,21 +124,21 @@ function FurnitureMain() {
               <div className="mt-6 grid grid-cols-4">
                 {connectionList.map((call) => (
                   <div key={call.name} className="group relative col-span-1 row-span-1">
-                      <div className="flex flex-col items-center justify-center h-80 w-96 overflow-hidden ">
-                        <img
-                          src={call.imageSrc}
-                          alt={call.imageAlt}
-                          className="object-fill object-center max-w-full max-h-80"
-                        />
-                        <div className="text-area ">
-                          <h3 className=" text-base font-semibold mt-6 ml-5 text-slate-500">
-                            <a href={call.href}>
-                              <span className="inset-0" />
-                              {call.name} <i className="fa-solid fa-chevron-right text-slate-500 m-2"></i>
-                            </a>
-                          </h3>
-                        </div>
+                    <div className="flex flex-col items-center justify-center h-80 w-96 overflow-hidden ">
+                      <img
+                        src={call.imageSrc}
+                        alt={call.imageAlt}
+                        className="object-fill object-center max-w-full max-h-80"
+                      />
+                      <div className="text-area ">
+                        <h3 className=" text-base font-semibold mt-6 ml-5 text-slate-500">
+                          <a href={call.href}>
+                            <span className="inset-0" />
+                            {call.name} <i className="fa-solid fa-chevron-right text-slate-500 m-2"></i>
+                          </a>
+                        </h3>
                       </div>
+                    </div>
                   </div>
                 ))}
               </div>
