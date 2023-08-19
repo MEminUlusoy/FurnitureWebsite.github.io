@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import "./FurnitureMain.css";
-import { RxDotFilled } from 'react-icons/rx';
+import FurnitureProductSlider from '../furnitereProduct/FurnitureProductSlider.jsx'
 
 const slides = [
   {
@@ -189,15 +189,15 @@ function FurnitureMain() {
             <div className="mt-6 grid grid-cols-4">
               {connectionList.map((call) => (
                 <div key={call.name} className="group relative col-span-1 row-span-1">
-                  <div  className="flex flex-col items-center justify-center h-80 w-96 overflow-hidden ">
-                  <a href='./category'>
-                  
-                    <img
-                      src={call.imageSrc}
-                      alt={call.imageAlt}
-                      
-                      className="object-fill object-center cursor-pointer max-w-full max-h-72 transition ease-in-out delay-150 hover:-translate-y-1 hover:scale-110 duration-500"
-                    /></a>
+                  <div className="flex flex-col items-center justify-center h-80 w-96 overflow-hidden ">
+                    <a href='./category'>
+
+                      <img
+                        src={call.imageSrc}
+                        alt={call.imageAlt}
+
+                        className="object-fill object-center cursor-pointer max-w-full max-h-72 transition ease-in-out delay-150 hover:-translate-y-1 hover:scale-110 duration-500"
+                      /></a>
                     <div className="text-area ">
                       <h3 className=" text-base font-semibold mt-6 ml-5 text-slate-500">
                         <a href={call.href}>
@@ -260,6 +260,18 @@ function FurnitureMain() {
               <p className="mt-4 text-xl text-gray-500 p-5">Aletsiz Kurulum</p></div>
           </div>
         </div>
+      </div>
+
+      <div className="product-slider m-20">
+        <div className="title flex flex-col items-center justify-center">
+          <h1 className="text-3xl font-normal text-slate-600 sm:text-4xl mr-52 ml-52 mt-20">Çok Satanlar</h1>
+          <div className="slider-inner w-5/6 h-5/6">
+            <FurnitureProductSlider />
+          </div>
+          
+
+        </div>
+
       </div>
 
       <div className="grid-img">
@@ -381,26 +393,26 @@ function FurnitureMain() {
 
       <div className="last-adv w-full h-[750px] flex items-center justify-center">
         <div className="w-4/5 h-4/5  flex items-center justify-center">
-            <div className="text-area absolute">
-                <h3 className=" text-base font-semibold  text-white flex flex-col ">
-                  <a href='./'>
-                    <span className="inset-0 drop-shadow-lg" />
-                    Mobilya, Ev Dekorasyonu ve Daha Fazlası...
-                  </a>
-                  <a
-                    href="./"
-                    className="opacity-70 inline-block border border-transparent drop-shadow-lg  bg-white px-8 py-3 text-center font-medium text-slate-700 hover:bg-white  mt-10"
-                  >
-                    Rehberi İncele
-                  </a>
-                </h3>
-              </div>
-              <img
-                src="https://www.normod.com/cdn/shop/articles/Klem_Silindir_1000x.jpg?v=1686656464"
-                alt="adv"
-                className="h-full w-full object-cover object-center m-36"
-              />
+          <div className="text-area absolute">
+            <h3 className=" text-base font-semibold  text-white flex flex-col ">
+              <a href='./'>
+                <span className="inset-0 drop-shadow-lg" />
+                Mobilya, Ev Dekorasyonu ve Daha Fazlası...
+              </a>
+              <a
+                href="./"
+                className="opacity-70 inline-block border border-transparent drop-shadow-lg  bg-white px-8 py-3 text-center font-medium text-slate-700 hover:bg-white  mt-10"
+              >
+                Rehberi İncele
+              </a>
+            </h3>
           </div>
+          <img
+            src="https://www.normod.com/cdn/shop/articles/Klem_Silindir_1000x.jpg?v=1686656464"
+            alt="adv"
+            className="h-full w-full object-cover object-center m-36"
+          />
+        </div>
       </div>
 
 
