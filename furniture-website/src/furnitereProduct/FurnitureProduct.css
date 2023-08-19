@@ -13,7 +13,7 @@
 
 
 .space-top{
-    height: 100px;
+    height: 50px;
     width: 100%;
     
 }
@@ -885,8 +885,8 @@
     font-size: 17px;
 }
 
-.footer{
-    height: 200px;
+.space-last {
+    height: 50px;
     width: 100%;
 }
 

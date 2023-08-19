@@ -225,8 +225,8 @@ function FurnitureProduct() {
             </div>   
           </div> 
 
-          <div className="product-inner-right-container">
-            <div className="product-right-shopping-container">
+          <div className="product-inner-right-container ">
+            <div className="product-right-shopping-container ">
 
               <div className="product-right-shopping-left-container">
 
@@ -333,11 +333,7 @@ function FurnitureProduct() {
         <p>Bunlar da İlgini Çekebilir</p>
       </div>
       <FurnitureProductSlider/>
-      
-      <div className="footer"></div>
-
-      
-
+      <div className="space-last"></div>
     </div>
   );
 
