@@ -243,7 +243,7 @@ function Navbar() {
             <div className="bg-white flex justify-center w-full h-full">
               {/* Mobile menu */}
               <Transition.Root show={open} as={Fragment}>
-                <Dialog as="div" className="relative z-40 lg:hidden" onClose={setOpen}>
+                <Dialog as="div" className="relative z-40 lg:hidden mt-80" onClose={setOpen}>
                   <Transition.Child
                     as={Fragment}
                     enter="transition-opacity ease-linear duration-300"
@@ -281,7 +281,7 @@ function Navbar() {
                         </div>
 
                         {/* Links */}
-                        <Tab.Group as="div" className="mt-2">
+                        <Tab.Group as="div" className=" mt-40">
                           <div className="border-b border-gray-200">
                             <Tab.List className="-mb-px flex space-x-8 px-4">
                               {navigation.categories.map((category) => (
@@ -301,7 +301,7 @@ function Navbar() {
                           </div>
                           <Tab.Panels as={Fragment}>
                             {navigation.categories.map((category) => (
-                              <Tab.Panel key={category.name} className=" px-4 pb-8 pt-2">
+                              <Tab.Panel key={category.name} className="border-b border-slate-500  px-4 pb-8 pt-2">
                                 <div className="">
                                   {category.featured.map((item) => (
                                     <div key={item.name} className="group relative text-sm">

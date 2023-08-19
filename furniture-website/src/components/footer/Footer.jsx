@@ -47,7 +47,7 @@ function Footer() {
                     </div>
                 </div>
                 <div className="right-side w-3/5 h-full flex items-end justify-end ">
-                    <div className="w-4/5 h-4/5 grid grid-cols-4 gap-4 flex items-start justify-end m-11 text-white">
+                    <div className="w-4/5 h-4/5 grid grid-cols-4 gap-4  items-start justify-end m-11 text-white">
                         <div className="">
                             <ul>
                                 <li className="text-white mb-3">
